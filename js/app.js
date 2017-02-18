@@ -450,8 +450,6 @@ var AirPlane = function(){
     var matSideWing=new THREE.MeshPhongMaterial({color:"#a3e240",shading:THREE.FlatShading});
     geomSideWing.vertices[4].y-=5;
     geomSideWing.vertices[5].y-=5;
-//    geomSideWing.vertices[6].y+=5;
-//    geomSideWing.vertices[7].y+=5;
     var sideWing=new THREE.Mesh(geomSideWing,matSideWing);
     var winfTop=sideWing.clone();
     winfTop.position.y=45;
@@ -463,12 +461,12 @@ var AirPlane = function(){
     //pillars
     
     var geomPillar=new THREE.BoxGeometry(2,45,1);
-    var matPillar=new THREE.MeshPhongMaterial({color:"#000000"});
+    var matPillar=new THREE.MeshPhongMaterial({color:"#25572a"});
     var pillarRf=new THREE.Mesh(geomPillar,matPillar);
-    geomPillar.vertices[0].x+=8;
-    geomPillar.vertices[1].x+=8;
-    geomPillar.vertices[4].x+=8;
-    geomPillar.vertices[5].x+=8;
+    geomPillar.vertices[0].x+=4;
+    geomPillar.vertices[1].x+=4;
+    geomPillar.vertices[4].x+=4;
+    geomPillar.vertices[5].x+=4;
     var pillarLf=pillarRf.clone();
     
     var pillarRb=pillarRf.clone();
@@ -484,16 +482,12 @@ var AirPlane = function(){
     pillarRb.position.set(-12,22,60);
     pillarRfm.position.set(8,22,10);
     pillarLfm.position.set(8,22,-10);
-    pillarLbm.position.set(-12,22,-10);
-    pillarRbm.position.set(-12,22,10);
     this.mesh.add(pillarRf);
     this.mesh.add(pillarRb);
     this.mesh.add(pillarLf);
     this.mesh.add(pillarLb);
     this.mesh.add(pillarRfm);
-    this.mesh.add(pillarRbm);
     this.mesh.add(pillarLfm);
-    this.mesh.add(pillarLbm);
     // Create Tailplane
 
     var geomTailPlane = new THREE.BoxGeometry(15,17,4,1,1,1);
